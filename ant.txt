@@ -7,3 +7,11 @@ create table aluno ( matricula int primary key auto_increment, nome varchar(80) 
 create table turma (numero int primary key auto_increment, turno char(1), definicao varchar(60));
 
 insert into aluno values ( null, 'carlota joaquina', '1945-02-10', '123.456.789-02', 'clenisbaldo winter', null);
+
+create table estuda (id_estuda int primary key auto_increment, fk_aluno_matricua int not null, fk_turma_numero int not null);
+
+alter table estuda add constraint fkmat foreign key (fk_aluno_matricua) references aluno (matricula);
+
+alter table estuda add constraint fknm foreign key (fk_turma_numero) references turma (numero);
+
+create table possui (idPossui int primary key auto_increment, fk_disciplina_cod_disciplina int not null, fk_turma_numero int not null);
