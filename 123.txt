@@ -1,0 +1,26 @@
+create table Veiculo ( idVeiculo int primary key auto_increment, fabricante varchar(50) not null. modelo varchar(80) not null, placa char(7) not null unique );
+
+insert into veiculo values ( '0154', 'Volkswagen', 'Virtus ComfortLine 200TSI', 'RIY6H62' );
+
+alter table cadastro_veicular add cor varchar(15) not null unique after modelo;
+
+alter table cadastro_veicular modify cor char(8) not null unique;
+
+alter table Veículo change fabricante marca varchar(80) not null;
+
+insert into carro values ( 101, 'vw', 'Gol', 'ABC1234' );
+
+insert into carro values ( null, 'Fiat', 'Marea Turbo', 'ABC1236' );
+
+insert into carro values ( null, 'Ford', 'Ka', 'ABC1235' );
+
+insert into carro values ( null, 'Toyota', 'Corolla', 'ABC1237' );
+
+insert into carro values ( null, 'Honda', 'Civic', 'ABC1238' );
+
+update carro set fabricante = 'volkswagen' where idVeiculo = 101;
+
+update carro set nome_modelo = 'polo', placa='ABC1240' where idVeiculo = 101;
+
+delete from carro where idVeiculo=102;
+

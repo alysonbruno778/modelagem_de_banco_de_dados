@@ -2,6 +2,12 @@ create database escola;
 
 use escola;
 
+show tables;
+
+use ***;
+
+create tables;
+
 create table aluno ( matricula int primary key auto_increment, nome varchar(80) not null, nascimento date, cpf char(14) not null  unique, responsavel varchar(80) not null, email varchar(80) unique);
 
 create table turma (numero int primary key auto_increment, turno char(1), definicao varchar(60));
@@ -15,3 +21,17 @@ alter table estuda add constraint fkmat foreign key (fk_aluno_matricua) referenc
 alter table estuda add constraint fknm foreign key (fk_turma_numero) references turma (numero);
 
 create table possui (idPossui int primary key auto_increment, fk_disciplina_cod_disciplina int not null, fk_turma_numero int not null);
+
+select * from aluno;
+
+insert into aluno ( matricula, nome, nascimento, cpf, responsavel, email ) values ( null, 'Elias sherman', '1995-03-02', '123.456.789-05', 'john sherman', 'es@email.com' );
+
+insert into aluno ( nome, cpf, responsavel ) values ( 'waldiney mouse', '123.456.789-06', 'wesley keyboard' );
+
+insert into turma values (20233080, 'm', 'tecnico de informatica' );
+
+insert into turma values (20233090, 't', 'tecnico de comunicação visual' );
+
+insert into estuda values ( 7501, 3001, 20233090 );
+insert into estuda values ( null, 3004, 20233080 );
+insert into estuda values ( null, 3006, 20233090 );
