@@ -35,3 +35,37 @@ insert into turma values (20233090, 't', 'tecnico de comunicação visual' );
 insert into estuda values ( 7501, 3001, 20233090 );
 insert into estuda values ( null, 3004, 20233080 );
 insert into estuda values ( null, 3006, 20233090 );
+
+insert into leciona values(601,5,1);
+
+insert into disciplina values (8, 'lógica de programação');
+
+insert into professor values (null, 'Jeferson Brandão', 'Lógica de programação');
+
+insert into possui values ( null, 8, 20233080 );
+
+insert into leciona values ( null, 8, 4);
+
+update professor set nome = 'Vicente orsino' where matricula = 4;
+
+update aluno set nascimento = '1980-09-20' where matricula = 3006;
+
+update aluno set nascimento = '1980-09-20' where matricula = 3007;
+
+alter table professor add email varchar(40) unique after nome;
+
+update professor set email = 'sc@email.com' where matricula = 4;
+
+update professor set email = 'vc@email.com' where matricula = 2;
+
+update professor set email = 'fl@email.com' where matricula = 3;
+
+update professor set email = 'serg@email.com' where matricula = 1;
+
+insert into turma values ( 20233100, 'm', 'comunicação visual' );
+
+insert into aluno values(null,'judite presley','2006-06-05','87.984.552.60','Gustavo Bezerra', 'gust@gmail.com');
+
+ insert into estuda values (null,3008,20233100);
+
+update disciplina set nome ='Programação python' where cod_disciplina = 5;
